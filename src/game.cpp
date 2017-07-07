@@ -1451,9 +1451,6 @@ private:
 #endif
 #ifdef __ANDROID__
 	bool m_android_chat_open;
-#endif	
-#ifdef __IOS__
-	GameRunData* runData_ptr;
 #endif
 };
 
@@ -1479,9 +1476,6 @@ Game::Game() :
 	sky(NULL),
 	local_inventory(NULL),
 	hud(NULL),
-#ifdef __IOS__
-	runData_ptr(NULL),
-#endif
 	mapper(NULL),
 	m_invert_mouse(false),
 	m_first_loop_after_window_activation(false),
@@ -1611,9 +1605,6 @@ bool Game::startup(bool *kill,
 	runData.time_from_last_punch = 10.0;
 	runData.profiler_max_page = 3;
 	runData.update_wielded_item_trigger = true;
-#ifdef __IOS__
-	runData_ptr = &runData;
-#endif
 	
 	memset(&flags, 0, sizeof(flags));
 	flags.show_chat = true;
@@ -4605,18 +4596,16 @@ void Game::pauseGame()
 	g_touchscreengui->handleReleaseAll();
 	if (g_menumgr.pausesGame())
 		return;
-	//show_pause_menu(&current_formspec, client, gamedef, texture_src, device, &input->joystick, simple_singleplayer_mode);
+	showPauseMenu();
 }
 
 void Game::customStatustext(const std::wstring &text, float time)
 {
-	if (!runData_ptr)
-		return;
-m_statustext = text;
-	if(m_statustext == L"")
-		runData_ptr->statustext_time = 0;
+	m_statustext = text;
+	if (m_statustext == L"")
+		runData.statustext_time = 0;
 	else
-		runData_ptr->statustext_time = time;
+		runData.statustext_time = time;
 }
 #endif
 
