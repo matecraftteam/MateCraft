@@ -1,11 +1,11 @@
-MultiCraft Open Source Project
+MateCraft Open Source Project
 ========
 
-MultiCraft is an Open Source sandbox game inspired by [Minecraft](https://minecraft.net/).
+MateCraft is an Open Source sandbox game inspired by [Minecraft](https://minecraft.net/).
 
-MultiCraft is based on Minetest project which is developed by a [number of contributors](https://github.com/minetest/minetest/graphs/contributors).
+MateCraft is based on MultiCraft project which is developed by a number of contributors.
 
-Copyright (c) 2014-2016 Maksim Gamarnik [MoNTE48] <MoNTE48@mail.ua> & MultiCraft Developement Team.
+https://github.com/MultiCraftProject/MultiCraft.
 
 The engine and the game is licensed under LGPLv3 (or higher). Resources games licensed under CC-BY-SA 3.0, unless otherwise stated, and also a bit of proprietary code and resources.
 
